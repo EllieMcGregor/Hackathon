@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html ng-app='hohApp'>
+<head>
+  <meta charset="UTF-8">
+  <title>Hipster or Homeless App</title>
+    <script type="text/javascript" src="/js/angular.js"></script>
+    <script type="text/javascript" src="/js/angular-animate.js"></script>
+    <script type="text/javascript" src="/js/app.js"></script>
+  <link href='http://fonts.googleapis.com/css?family=Shadows+Into+Light|Pacifico|Amatic+SC|Titillium+Web|Covered+By+Your+Grace|Raleway' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" type="text/css" href="/css/styles.css">
+</head>
+<body class="body">
+  <div class="wrapper" ng-controller="HohController">
+
+    <div class="cd-fixed-bg cd-bg-1">
+      <h1 class ="hvr-grow title ">  GA Hipster or Homeless </h1>
+      <h2>Second home or only home? </h2>
+    </div>
+
+ <h3>Hipster or Homeless ?</h3>
+
+    <div class='image' ng-repeat="random in randoms">
+      <div class="people-name">{{ random.name }}</div>
+      <img ng-src="{{random.imageUrl}}" alt="{{random.name}}">
+    </div>
+    
+    <section class='game-section'>
+    <p> But realistically who looks more homeless? </p>
+  
+    <button class='voting-button' ng-click="hipster = hipster + 1">
+      Hipsters: {{ hipster }}
+    </button>
+
+    <button class='voting-button' ng-click="outcast = outcast + 1">
+      Homeless: {{ outcast }}
+    </button>
+
+  </section>
+ 
+   <button class='button' ng-click='reloadPage(randoms)'>Play Again ;) </button>
+  </div>
+
+  </div>
+</body>
